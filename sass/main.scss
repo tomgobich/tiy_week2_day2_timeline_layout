@@ -1,0 +1,155 @@
+$color-white: #fff;
+$color-primary-gray: #d3d3d3;
+$color-primary-blue: lighten(rgb(107, 177, 230), 10);
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.4em;
+}
+
+.container {
+	width: 100%;
+	max-width: 768px;
+	min-width: 310px;
+	padding: 0 20px;
+	margin: 40px auto 0;
+}
+
+.timeline {
+	padding-bottom: 20px;
+	margin-top: -5px;
+	position: relative;
+	overflow: hidden;
+
+	&:last-child {
+		padding-bottom: 0;
+		margin-bottom: 15px;
+	}
+
+	.timeline-details {
+		width: 20%;
+		float: left;
+
+		.datetime,
+		.timeline-circle {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.datetime {
+			text-align: right;
+			padding-right: 10px;
+
+			p,
+			h3 {
+				margin-top: 0px;
+				margin-bottom: 0px;
+			}
+
+			p {
+				font-size: 0.6em;
+				color: $color-primary-gray;
+			}
+
+			h3 {
+				font-size: 1.6em;
+				margin-top: -5px;
+			}
+		}
+
+		.timeline-circle {
+			width: 40px;
+			height: 40px;
+			color: $color-white;
+			text-align: center;
+			background-color: darken($color-primary-blue, 10);
+			padding-top: 7px;
+			border-radius: 50%;
+			border: 5px solid $color-primary-blue;
+
+			.timeline-bar {
+				width: 10px;
+				background-color: $color-primary-blue;
+				padding-bottom: 100%;
+				position: absolute;
+				margin-left: 10px;
+				z-index: -99;
+			}
+		}
+	}
+
+	.timeline-content {
+		width: 80%;
+		background-color: $color-primary-blue;
+		color: $color-white;
+		padding: 20px 30px 40px;
+		border-radius: 5px;
+		float: right;
+		position: relative;
+
+		h2 {
+			font-size: 1.8em;
+			font-weight: 600;
+			margin-top: 0;
+			padding-bottom: 10px;
+			border-bottom: 1px solid rgba($color-white, 0.2);
+			margin-bottom: 20px;
+		}
+
+		p {
+			font-weight: 300;
+			color: darken($color-white, 5);
+			margin-bottom: 0;
+		}
+
+		.timeline-caret {
+			width: 0;
+			height: 0;
+			border-right: 12px solid $color-primary-blue;
+			border-top: 12px solid transparent;
+			border-bottom: 12px solid transparent;
+			position: absolute;
+			top: 2px;
+			left: -6px;
+		}
+	}
+}
+
+
+@for $i from 1 through 4 {
+
+	#item-#{$i} {
+		.timeline-content { 
+			background-color: darken($color-primary-blue, ($i * 10) ); 
+
+			.timeline-caret {
+				border-right: 12px solid darken($color-primary-blue, ($i * 10) ); 
+			}
+		}
+
+		.datetime h3 { 
+			color: darken($color-primary-blue, ($i * 10) ); 
+		}
+	}
+
+}
+
+@import '_responsive.scss';
+

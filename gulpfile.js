@@ -24,9 +24,9 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('sass', function() {
-	return gulp.src('scss/**/*.scss')
+	return gulp.src('sass/**/*.scss')
 		.pipe(sass().on('error', sass.logError)) // converts sass to css using gulp-sass
-		.pipe(gulp.dest('css'))
+		.pipe(gulp.dest('css/'))
 		.pipe(browserSync.reload({
 			stream: true
 		}))

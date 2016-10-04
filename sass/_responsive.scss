@@ -1,0 +1,42 @@
+@media screen and (max-width: 768px) {
+
+	.container {
+		padding: 0 5px;
+		font-size: 1.2em;
+	}
+
+	.timeline {
+		margin-bottom: 40px;
+
+		.timeline-details {
+			width: 100%;
+
+			.datetime {
+
+				h3 {
+					float: left;
+				}
+
+				p {
+					display: inline-block;
+					padding: 16px 0 0 10px;
+				}
+			}
+
+			.timeline-circle {
+				display: none;
+			}
+		}
+
+		.timeline-content {
+			width: 100%;
+			padding: 15px 20px 20px;
+
+			.timeline-caret {
+				display: none;
+			}
+		}
+	}
+
+}
+
