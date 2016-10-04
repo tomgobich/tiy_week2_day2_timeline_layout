@@ -1,6 +1,16 @@
+// ------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------
+
 $color-white: #fff;
 $color-primary-gray: #d3d3d3;
 $color-primary-blue: lighten(rgb(107, 177, 230), 10);
+
+
+
+// ------------------------------------------------------------
+// Global Styles
+// ------------------------------------------------------------
 
 * {
     box-sizing: border-box;
@@ -32,6 +42,12 @@ h6 {
 	margin: 40px auto 0;
 }
 
+
+
+// ------------------------------------------------------------
+// All Timeline Styles
+// ------------------------------------------------------------
+
 .timeline {
 	padding-bottom: 20px;
 	margin-top: -5px;
@@ -43,6 +59,7 @@ h6 {
 		margin-bottom: 15px;
 	}
 
+	// Timeline Detail Styles
 	.timeline-details {
 		width: 20%;
 		float: left;
@@ -95,6 +112,7 @@ h6 {
 		}
 	}
 
+	// Timeline Content Styles
 	.timeline-content {
 		width: 80%;
 		background-color: $color-primary-blue;
@@ -133,6 +151,11 @@ h6 {
 }
 
 
+
+// ------------------------------------------------------------
+// Color Incrementation Iterations
+// ------------------------------------------------------------
+
 @for $i from 1 through 4 {
 
 	#item-#{$i} {
@@ -150,6 +173,12 @@ h6 {
 	}
 
 }
+
+
+
+// ------------------------------------------------------------
+// Responsive Styles -- Imported
+// ------------------------------------------------------------
 
 @import '_responsive.scss';
 
